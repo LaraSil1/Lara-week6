@@ -29,7 +29,7 @@ li {
   padding: 15px;
   margin: 20px auto;
   border-radius: 10px;
-  max-width: 600px;
+  max-width: 600px !important;
 }
 
 .weather-icon {
