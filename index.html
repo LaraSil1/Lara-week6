@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
+    <meta
+      id="ConnectiveDocSignExtentionInstalled"
+      name="ConnectiveDocSignExtentionInstalled"
+      data-extension-version="1.0.6"
+    />
+
+    <script
+      charset="utf-8"
+      src="https://codesandbox.io/static/js/0.2455d7681.chunk.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="https://codesandbox.io/static/js/3.09a963795.chunk.js"
+    ></script>
+    <script
+      charset="utf-8"
+      src="https://codesandbox.io/static/js/7.916d1bd34.chunk.js"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <form class="search-bar" id="search-bar">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary"
+              />
+            </div>
+            <div class="col-3">
+              <button class="btn btn-success" id="current-location-button">
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+        <h1 id="city">Antwerp</h1>
+        <ul>
+          <li id="date">Saturday 20:32</li>
+          <li id="description">clarity</li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix">
+              <div class="float-left">
+                <span class="temperature" id="temperature">10</span
+                ><span>°C</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: <span id="humidity">23</span>%</li>
+              <li>Wind: <span id="wind">3</span> km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
