@@ -10,7 +10,7 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
     <meta
       id="ConnectiveDocSignExtentionInstalled"
@@ -34,61 +34,67 @@
 
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form class="search-bar" id="search-bar">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Type a city.."
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-primary"
-              />
-            </div>
-            <div class="col-3">
-              <button class="btn btn-success" id="current-location-button">
-                Current
-              </button>
-            </div>
-          </div>
-        </form>
-        <h1 id="city">Antwerp</h1>
-        <ul>
-          <li id="date">Saturday 20:32</li>
-          <li id="description">clarity</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <div class="float-left">
-                <strong class="temperature" id="temperature">10</strong>
-                ><span>°C</span>
+      <div class="wrapper">
+        <div class="weather-app">
+          <form class="search-bar" id="search-bar">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-primary"
+                />
+              </div>
+              <div class="col-3">
+                <button class="btn btn-success" id="current-location-button">
+                  Current
+                </button>
               </div>
             </div>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: <span id="humidity">23</span>%</li>
-              <li>Wind: <span id="wind">3</span> km/h</li>
-            </ul>
+          </form>
+          <h1 id="city">Antwerp</h1>
+          <ul>
+            <li id="date">Saturday 20:32</li>
+            <li id="description">clarity</li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix">
+                <div class="float-left">
+                  <strong class="temperatuur" id="temperature">10</strong>
+                  <span>
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity">23</span>%</li>
+                <li>Wind: <span id="wind">3</span> km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
+        <p>
+          <a href="https://github.com/LaraSil1/Lara-week6" target="_blank"
+            >GitHub repository</a
+          >, Lara
+        </p>
       </div>
-      <p>
-        <a href="https://github.com/LaraSil1/Lara-week6" target="_blank"
-          >GitHub repository</a
-        >, Lara
-      </p>
     </div>
     <script src="src/index.js"></script>
+    <script src="src/style.css"></script>
   </body>
 </html>
