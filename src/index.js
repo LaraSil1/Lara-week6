@@ -23,6 +23,58 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+/* START Forecast at the bottom */
+function formatDate2(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  console.log(day);
+  console.log(days[day]);
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  console.log(forecast);
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      console.log(forecastDay);
+      forecastHTML =
+        forecastHTML +
+        `
+    <div class="col-2">
+      <div class="weather-forecast-day">${formatDate2(forecastDay.time)}</div>
+      <img
+        src="${forecastDay.condition.icon_url}"
+        alt=""
+        width="40"
+      />
+      <div class="weather-forecast-temperature">
+        <span class="weather-forecast-temperature-max">${Math.round(
+          forecastDay.temperature.maximum
+        )}°</span>
+        <span class="weather-forecast-temperature-min">${Math.round(
+          forecastDay.temperature.minimum
+        )}°</span>
+      </div>
+    </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + "</div>";
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getSearchWeatherForecast(position) {
+  console.log(position);
+  let apiKey = "3c41ta09do8a6af3e0cf99346db734fb";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.coord.lon}&lat=${position.coord.lat}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+/* END Forecast at the bottom */
+
 function displayWeatherCondition(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -42,6 +94,8 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+  getSearchWeatherForecast(response.data);
 }
 
 function searchCity(city) {
